@@ -19,7 +19,7 @@ export class AppController {
   
   @Get('Teste')
   async teste(): Promise<any> {
-    await fs.promises.mkdir(`${__dirname}/temp`, { recursive: true}).catch(error => console.log(error));
+    // await fs.promises.mkdir(`${__dirname}/temp`, { recursive: true}).catch(error => console.log(error));
     return new Promise((resolve, reject) => {
         
       const speechConfig = sdk.SpeechConfig.fromSubscription('cebaabaa9b7845f6aa1e4f00044d387b', 'eastus2');
@@ -28,10 +28,10 @@ export class AppController {
       let audioConfig = null;
       let filename = `${__dirname}/temp/teste.mp3`;
       if (filename) {
-          // audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
+          audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
       }
       
-      const synthesizer = new sdk.SpeechSynthesizer(speechConfig);
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
 
       synthesizer.speakTextAsync(
           'teste',
