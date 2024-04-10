@@ -7,10 +7,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors()
 
-  // app.use(fileupload({
-  //   useTempFiles: true,
-  //   tempFileDir: "/var/task/dist/temp",
-  // }))
+  app.use(fileupload({
+    useTempFiles: true,
+    tempFileDir: "/var/task/dist/tmp",
+  }))
 
   await app.listen(3000);
 }
