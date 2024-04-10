@@ -7,8 +7,6 @@ import { PassThrough } from 'stream';
 import * as fs from 'fs';
 import { error } from 'console';
 
-import * as fsCyclic from '@cyclic.sh/s3fs'
-
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
@@ -28,7 +26,7 @@ export class AppController {
       speechConfig.speechSynthesisOutputFormat = 5; // mp3
       
       let audioConfig = null;
-      let filename = `src/teste.mp3`;
+      let filename = `${__dirname}/temp/teste.mp3`;
       if (filename) {
           audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
       }
