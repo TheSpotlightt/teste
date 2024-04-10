@@ -25,9 +25,9 @@ export class AppController {
       
       let audioConfig = null;
       let filename = 'src/teste.mp3';
-      if (filename) {
-          audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
-      }
+      // if (filename) {
+      //     audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
+      // }
       
       const synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
 
