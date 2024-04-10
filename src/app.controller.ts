@@ -26,7 +26,7 @@ export class AppController {
       speechConfig.speechSynthesisOutputFormat = 5; // mp3
       
       let audioConfig = null;
-      let filename = `${__dirname}/temp/teste.mp3`;
+      let filename = `${__dirname}/teste.mp3`;
       if (filename) {
           audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
       }
