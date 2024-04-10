@@ -5,6 +5,7 @@ import * as sdk from 'microsoft-cognitiveservices-speech-sdk'
 import { Buffer } from 'buffer';
 import { PassThrough } from 'stream';
 import * as fs from 'fs';
+import { error } from 'console';
 
 @Controller()
 export class AppController {
@@ -18,7 +19,7 @@ export class AppController {
   
   @Get('Teste')
   async teste(): Promise<any> {
-    await fs.promises.mkdir(`${__dirname}/temp/teste.mp3`, { recursive: true})
+    await fs.promises.mkdir(`${__dirname}/temp/teste.mp3`, { recursive: true}).catch(error => console.log(error));
     return new Promise((resolve, reject) => {
         
       const speechConfig = sdk.SpeechConfig.fromSubscription('cebaabaa9b7845f6aa1e4f00044d387b', 'eastus2');
