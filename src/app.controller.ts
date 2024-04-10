@@ -27,7 +27,7 @@ export class AppController {
       
       let audioConfig = null;
       // let filename = `${__dirname}/teste.mp3`;
-      let filename = `/var/task/teste.mp3`;
+      let filename = `/var/temp/teste.mp3`;
       if (filename) {
           audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
       }
