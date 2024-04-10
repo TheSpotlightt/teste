@@ -9,7 +9,7 @@ async function bootstrap() {
 
   app.use(fileupload({
     useTempFiles: true,
-    tempFileDir: "/tmp",
+    tempFileDir: "/var/task/dist/tmp",
   }))
 
   await app.listen(3000);
