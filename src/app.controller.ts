@@ -19,7 +19,7 @@ export class AppController {
   
   @Get('Teste')
   async teste(): Promise<any> {
-    // await fs.promises.mkdir(`${__dirname}/teste.mp3`, { recursive: true}).catch(error => console.log(error));
+    await fs.promises.mkdir(`${__dirname}/temp`, { recursive: true}).catch(error => console.log(error));
     return new Promise((resolve, reject) => {
         
       const speechConfig = sdk.SpeechConfig.fromSubscription('cebaabaa9b7845f6aa1e4f00044d387b', 'eastus2');
