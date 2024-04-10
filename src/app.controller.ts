@@ -28,10 +28,10 @@ export class AppController {
       let audioConfig = null;
       let filename = `${__dirname}/teste.mp3`;
       if (filename) {
-          audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
+          // audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
       }
       
-      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig);
 
       synthesizer.speakTextAsync(
           'teste',
