@@ -18,7 +18,6 @@ export class AppController {
   
   @Get('Teste')
   async teste(): Promise<any> {
-    await fs.promises.mkdir(`src/teste.mp3`)
 
     return new Promise((resolve, reject) => {
         
@@ -26,7 +25,7 @@ export class AppController {
       speechConfig.speechSynthesisOutputFormat = 5; // mp3
       
       let audioConfig = null;
-      let filename = 'src/teste.mp3';
+      let filename = `${__dirname}/temp/teste.mp3`;
       // if (filename) {
       //     audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
       // }
